@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Map indigo to a premium professional dark green (Emerald/Forest/Pine) */
+  --color-indigo-50: #edfdf1;
+  --color-indigo-100: #dbfbe3;
+  --color-indigo-200: #b4f7c6;
+  --color-indigo-300: #80ea9f;
+  --color-indigo-400: #3fdb71;
+  --color-indigo-500: #1abf51;
+  --color-indigo-600: #047857; /* Professional Deep Emerald Green */
+  --color-indigo-700: #065f46;
+  --color-indigo-800: #064e3b;
+  --color-indigo-900: #022c22;
+  --color-indigo-950: #011a14;
+}
+
+/* Theme 2: Forest Canopy - deep woodland green elements */
+.theme-forest {
+  --color-indigo-50: #f4fdf6;
+  --color-indigo-100: #e2fbe9;
+  --color-indigo-200: #c1f7cd;
+  --color-indigo-300: #93eba2;
+  --color-indigo-400: #55db6c;
+  --color-indigo-500: #29be49;
+  --color-indigo-600: #14532d; /* Deep Forest Green */
+  --color-indigo-700: #166534;
+  --color-indigo-800: #15803d;
+  --color-indigo-900: #16a34a;
+  --color-indigo-950: #052e16;
+}
+
+/* Theme 3: Spruce Gold Accents - slate pine spruce with golden indicators */
+.theme-spruce {
+  --color-indigo-50: #f0fdfa;
+  --color-indigo-100: #ccfbf1;
+  --color-indigo-200: #99f6e4;
+  --color-indigo-300: #5eead4;
+  --color-indigo-400: #2dd4bf;
+  --color-indigo-500: #14b8a6;
+  --color-indigo-600: #0f766e; /* Spruce Teal Pine Green */
+  --color-indigo-700: #0d9488;
+  --color-indigo-800: #115e59;
+  --color-indigo-900: #134e4a;
+  --color-indigo-950: #042f2e;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 232, 240);
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgb(51, 65, 85);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Elite Dark Mode Variable Overrides and Aesthetics */
+.dark {
+  --color-slate-50: #040908;
+  --color-slate-100: #0a1412;
+  --color-slate-200: #1a2d2a;
+  --color-slate-300: #29423e;
+  --color-slate-400: #42615c;
+  --color-slate-500: #648c85;
+  --color-slate-600: #8eaead;
+  --color-slate-700: #b0c9c7;
+  --color-slate-800: #d1dedd;
+  --color-slate-900: #f1f5f5;
+  --color-slate-950: #fafcfc;
+  
+  background-color: #040908 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Convert all white cards and headers into premium forest-slate chambers */
+.dark .bg-white,
+.dark .bg-white\/85,
+.dark .bg-slate-50,
+.dark .bg-slate-100\/50,
+.dark .bg-slate-50\/50,
+.dark .bg-slate-50\/40,
+.dark header {
+  background-color: #0b1513 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Ensure sticky header remains blury dark */
+.dark header.sticky {
+  background-color: rgba(11, 21, 19, 0.85) !important;
+}
+
+/* Standard inputs & textareas inside dark mode */
+.dark input, 
+.dark textarea, 
+.dark select {
+  background-color: #080f0d !important;
+  border-color: #1a2d2a !important;
+  color: #f8fafc !important;
+}
+
+.dark input:focus, 
+.dark textarea:focus, 
+.dark select:focus {
+  border-color: var(--color-indigo-500) !important;
+  --tw-ring-color: rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Fine-tune borders & separators */
+.dark .border,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/50 {
+  border-color: #152522 !important;
+}
+
+/* Style normal cards / elements nicely inside dark view */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-100,
+.dark .bg-slate-100\/80 {
+  background-color: #111e1b !important;
+}
+
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .group:hover {
+  background-color: #172925 !important;
+}
+
+.dark .bg-indigo-50 {
+  background-color: #112d26 !important;
+}
+
+/* Option dropdown elements in dark mode */
+.dark option {
+  background-color: #0b1513 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Specific button styles & hover resets to ensure text is ALWAYS bright in dark mode */
+.dark .group-hover\:text-indigo-950:hover,
+.dark .group:hover .group-hover\:text-indigo-950 {
+  color: #ffffff !important;
+}
+
+/* Transition speed for premium theme switching */
+div, header, button, select, p, h1, h2, h3, h4, h5, span, label, a {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "I-LMS",
+  "description": "An interactive LMS with 20 premium courses, embedded video lectures, pass-controlled quizzes, user profile analytics, and golden completion credentials utilizing Gemini server-side AI appraisals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
